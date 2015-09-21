@@ -33,4 +33,11 @@ class ArraysTest < MiniTest::Test
 		assert_equal 'lalalalal', @m.repeat_separator('l','a',5)
 		assert_equal 'This should not be repeated.', @m.repeat_separator('This should not be repeated.','k',1)
 	end
+
+	def test_same_ends
+		assert_equal true, @m.same_ends?([1,8],0)
+		assert_equal true, @m.same_ends?([5,5],1)
+		assert_equal true, @m.same_ends?([17,8,4,101,5,6,17,8,4],3)
+		assert_equal false, @m.same_ends?([1,2,3,6,17,244,1,2,3,4],3)
+	end
 end

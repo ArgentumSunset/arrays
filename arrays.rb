@@ -30,4 +30,8 @@ module Arrays
 		str
 	end
 
+	def same_ends?
+		
+	end
+
 end
