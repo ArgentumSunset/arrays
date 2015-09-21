@@ -11,4 +11,26 @@ class ArraysTest < MiniTest::Test
    	end.new
 	end
 
+	def test_middles
+		assert_equal [2,5], @m.middles([1,2,3],[4,5,6])
+		assert_equal ['hello',true], @m.middles(['hi','hello','hola'],[false,true,false])
+	end
+
+	def test_max
+		assert_equal 7, @m.max([7,0,1,-3,1,6])
+		assert_equal 18, @m.max([1,2,3,4,18])
+	end
+
+	def test_lucky13
+		assert_equal true, @m.lucky13?([8,9,2,14,12])
+		assert_equal false, @m.lucky13?([1,1,3,3])
+		assert_equal false, @m.lucky13?([18,1,12,5,0])
+		assert_equal false, @m.lucky13?([18,3,12,5,0])
+	end
+
+	def test_repeat_separator
+		assert_equal 'SoOrSoOrSo', @m.repeat_separator('So','Or',3)
+		assert_equal 'lalalalal', @m.repeat_separator('l','a',5)
+		assert_equal 'This should not be repeated.', @m.repeat_separator('This should not be repeated.','k',1)
+	end
 end
