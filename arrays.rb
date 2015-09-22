@@ -35,5 +35,16 @@ module Arrays
         m = n - 1
 		array[0..m] == array[(lastNumber - m)..(lastNumber)] || n == 0 ? true : false
 	end
+    
+    def starry?(str)
+        x = ""
+        starred = false
+        is_starry = false
+        for i in 0...str.length
+            char = str[i]
+            char == '*' ? starred = true : (char == x && starred == true ? is_starry = true : x = char)
+        end
+        is_starry
+    end
 
 end
