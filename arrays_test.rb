@@ -59,5 +59,7 @@ class ArraysTest < MiniTest::Test
     def test_zero_front
         assert_equal [0,0,0,4,6,7], @m.zero_front([4,0,6,7,0,0])
         assert_equal [0,7,6,12,8], @m.zero_front([7,6,12,0,8])
+        assert_equal [9,4,6,17,5], @m.zero_front([9,4,6,17,5])
+        assert_equal [0,0,9,4,2,8,17], @m.zero_front([9,0,4,2,8,17,0])
     end
 end

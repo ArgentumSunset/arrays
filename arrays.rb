@@ -53,4 +53,12 @@ module Arrays
         end
         str
     end
+    
+    def zero_front(arr)
+        zero_num = 0
+        for i in 0...arr.length
+            arr[i] == 0 ? arr.delete_at(i) && arr.unshift(0) : false
+        end
+        arr
+    end
 end
