@@ -68,4 +68,14 @@ module Arrays
         end
         arr
     end
+    
+    def max_span(arr)
+        spans_arr = []
+        for i in 0...arr.length
+            for j in i + 1...arr.length
+                arr[i] == arr[j] ? spans_arr.push(j - (i - 1)) : false
+            end
+        end
+        spans_arr.length > 0 ? spans_arr.max : 0
+    end
 end

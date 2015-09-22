@@ -71,9 +71,10 @@ class ArraysTest < MiniTest::Test
     end
     
     def test_max_span
-        assert_equal 2, @m.max_span([2,2,8,4,9])
-        assert_equal 5, @m.max_span([2,8,4,4,2])
-        assert_equal 0, @m.max_span([2,8,4,9])
-        assert_equal 8, @m.max_span([8,4,9,6,2,3,4,7,7,9,7])
+        assert_equal 2, @m.max_span([2,2,'eight',4,9])
+        assert_equal 5, @m.max_span([2,8,true,4,2])
+        assert_equal 0, @m.max_span([2,8,'this',9])
+        assert_equal 8, @m.max_span([8,4,'hi',6,false,3,4,7,7,'hi',7])
+        assert_equal 4, @m.max_span([true, false, false, true])
     end
 end
