@@ -53,5 +53,11 @@ class ArraysTest < MiniTest::Test
         assert_equal "D+++", @m.plus_it("Dear","D")
         assert_equal "Ho++++Ho++++Ho++++++", @m.plus_it("HoMerrHoyChrHoistmaH","Ho")
         assert_equal "++++55++++", @m.plus_it("1234554321","5")
+        assert_equal "+++Jolly Joe+++", @m.plus_it("krTJolly Joec7K","Jolly Joe")
+    end
+    
+    def test_zero_front
+        assert_equal [0,0,0,4,6,7], @m.zero_front([4,0,6,7,0,0])
+        assert_equal [0,7,6,12,8], @m.zero_front([7,6,12,0,8])
     end
 end
