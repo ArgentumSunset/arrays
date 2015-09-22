@@ -40,4 +40,12 @@ class ArraysTest < MiniTest::Test
 		assert_equal true, @m.same_ends?([17,8,4,101,5,6,17,8,4],3)
 		assert_equal false, @m.same_ends?([1,2,3,6,17,244,1,2,3,4],3)
 	end
+    
+    def test_starry
+        assert_equal true, @m.starry?("Nooooo*ooo!")
+        assert_equal true, @m.starry?("A*A")
+        assert_equal false, @m.starry?("*Ackerman")
+        assert_equal false, @m.starry?("A*ckerman")
+        assert_equal false, @m.starry?("No stars here, bro.")
+    end
 end
