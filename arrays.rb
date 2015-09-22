@@ -30,8 +30,10 @@ module Arrays
 		str
 	end
 
-	def same_ends?
-		
+	def same_ends?(array,n)
+        lastNumber = array.length - 1
+        m = n - 1
+		array[0..m] == array[(lastNumber - m)..(lastNumber)] || n == 0 ? true : false
 	end
 
 end
