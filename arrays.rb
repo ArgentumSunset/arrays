@@ -45,5 +45,12 @@ module Arrays
         end
         is_starry
     end
-
+    
+    def plus_it(str,token)
+        n = 0
+        for i in 0...str.length
+            str[i - n...i + token.length - n] == token ? (n == token.length - 1 ? n = 0 : n += 1) : str[i] = '+'
+        end
+        str
+    end
 end

@@ -51,7 +51,7 @@ class ArraysTest < MiniTest::Test
     
     def test_plus_it
         assert_equal "D+++", @m.plus_it("Dear","D")
-        assert_equal "Ho++++Ho++++Ho++++++", @m.plus_it("HoMerrHoyChrHoistmas","Ho")
-        assert_equal "++++55++++", @m.plus_it("1234554321")
+        assert_equal "Ho++++Ho++++Ho++++++", @m.plus_it("HoMerrHoyChrHoistmaH","Ho")
+        assert_equal "++++55++++", @m.plus_it("1234554321","5")
     end
 end
