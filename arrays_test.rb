@@ -66,7 +66,14 @@ class ArraysTest < MiniTest::Test
     def test_ten_run
         assert_equal [4,16,20,20,20,20,30,30], @m.ten_run([4,16,20,12,-3,4,30,199])
         assert_equal [10,10,20,20,30,30,40,40], @m.ten_run([10,8,20,20,30,-24,40,12])
-        assert_equal [0,0,-10,-10,-20,-20,-20], @m.ten_run([0,8,-10,12,-20,-21,-22]) #Negatives and zero are also multiples of ten
+        assert_equal [0,0,-10,-10,-20,-20,-20], @m.ten_run([0,8,-10,12,-20,-21,-22]) #Negatives and zero are also multiples of ten!
         assert_equal [10,10,10,10], @m.ten_run([10,14,99,-62])
+    end
+    
+    def test_max_span
+        assert_equal 2, @m.max_span([2,2,8,4,9])
+        assert_equal 5, @m.max_span([2,8,4,4,2])
+        assert_equal 0, @m.max_span([2,8,4,9])
+        assert_equal 8, @m.max_span([8,4,9,6,2,3,4,7,7,9,7])
     end
 end
