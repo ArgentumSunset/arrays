@@ -62,4 +62,11 @@ class ArraysTest < MiniTest::Test
         assert_equal [9,4,6,17,5], @m.zero_front([9,4,6,17,5])
         assert_equal [0,0,9,4,2,8,17], @m.zero_front([9,0,4,2,8,17,0])
     end
+    
+    def test_ten_run
+        assert_equal [4,16,20,20,20,20,30,30], @m.ten_run([4,16,20,12,-3,4,30,199])
+        assert_equal [10,10,20,20,30,30,40,40], @m.ten_run([10,8,20,20,30,-24,40,12])
+        assert_equal [0,0,-10,-10,-20,-20,-20], @m.ten_run([0,8,-10,12,-20,-21,-22]) #Negatives and zero are also multiples of ten
+        assert_equal [10,10,10,10], @m.ten_run([10,14,99,-62])
+    end
 end
