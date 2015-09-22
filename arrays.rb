@@ -41,8 +41,7 @@ module Arrays
         starred = false
         is_starry = false
         for i in 0...str.length
-            char = str[i]
-            char == '*' ? starred = true : (char == x && starred == true ? is_starry = true : x = char)
+            str[i] == '*' ? starred = true : (str[i] == x && starred == true ? is_starry = true : x = str[i])
         end
         is_starry
     end
